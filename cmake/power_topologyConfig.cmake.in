@@ -1,0 +1,25 @@
+@PACKAGE_INIT@
+
+# Power Topology - DCCP Tranche 3 (Electrical Infrastructure Control).
+#
+# Exported target:
+#   dccp::power_topology        C++20 library
+#
+# Example:
+#   find_package(power_topology 1.0 REQUIRED)
+#   target_link_libraries(app PRIVATE dccp::power_topology)
+
+include(CMakeFindDependencyMacro)
+
+include("${CMAKE_CURRENT_LIST_DIR}/power_topologyTargets.cmake")
+
+set(POWER_TOPOLOGY_LIBRARIES dccp::power_topology)
+set(POWER_TOPOLOGY_INCLUDE_DIRS "${PACKAGE_PREFIX_DIR}/@CMAKE_INSTALL_INCLUDEDIR@")
+
+if(NOT TARGET dccp::power_topology)
+  set(power_topology_FOUND FALSE)
+  set(power_topology_NOT_FOUND_MESSAGE "the power_topology export set did not provide dccp::power_topology")
+  return()
+endif()
+
+check_required_components(power_topology)
