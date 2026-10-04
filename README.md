@@ -1,7 +1,5 @@
 # Power Topology
 
-**DCCP Tranche 3 — Electrical Infrastructure Control. Repository 18 of 72.**
-
 Power Topology owns the **generation-bound structural model of facility
 electrical connectivity**: utility feeds, switchgear, transformers, UPS systems,
 buses, PDUs/RPPs, branch circuits, transfer and tie connections, load attachment
@@ -19,7 +17,7 @@ It is topology, not control.
 
 Every answer this library produces is a statement about **structure**. It never
 answers whether something is energized, whether a switching action is authorized,
-or whether a path has enough capacity. Those questions belong to other DCCP
+or whether a path has enough capacity. Those questions belong to other facility
 components, and every query result carries an explicit posture recording that
 they were not evaluated.
 
